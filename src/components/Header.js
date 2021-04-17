@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Profile() {
+function Header() {
     return (
         <div>
-            Profile
+            Header
         </div>
     )
 }
 
-export default Profile;
+export default Header;

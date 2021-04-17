@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Profile() {
+function CreatePost() {
     return (
         <div>
-            Profile
+            CreatePost
         </div>
     )
 }
 
-export default Profile;
+export default CreatePost;
