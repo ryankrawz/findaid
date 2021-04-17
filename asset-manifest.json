@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/findaid/static/css/main.ea1455b2.chunk.css",
+    "main.js": "/findaid/static/js/main.a8f2f04b.chunk.js",
+    "main.js.map": "/findaid/static/js/main.a8f2f04b.chunk.js.map",
+    "runtime-main.js": "/findaid/static/js/runtime-main.9fd11518.js",
+    "runtime-main.js.map": "/findaid/static/js/runtime-main.9fd11518.js.map",
+    "static/js/2.97b9c982.chunk.js": "/findaid/static/js/2.97b9c982.chunk.js",
+    "static/js/2.97b9c982.chunk.js.map": "/findaid/static/js/2.97b9c982.chunk.js.map",
+    "static/js/3.f3f1377f.chunk.js": "/findaid/static/js/3.f3f1377f.chunk.js",
+    "static/js/3.f3f1377f.chunk.js.map": "/findaid/static/js/3.f3f1377f.chunk.js.map",
+    "index.html": "/findaid/index.html",
+    "static/css/main.ea1455b2.chunk.css.map": "/findaid/static/css/main.ea1455b2.chunk.css.map",
+    "static/js/2.97b9c982.chunk.js.LICENSE.txt": "/findaid/static/js/2.97b9c982.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.9fd11518.js",
+    "static/js/2.97b9c982.chunk.js",
+    "static/css/main.ea1455b2.chunk.css",
+    "static/js/main.a8f2f04b.chunk.js"
+  ]
+}
