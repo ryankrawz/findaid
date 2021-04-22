@@ -1,4 +1,5 @@
 const initialStore = {
+    currentUser: 'bernie.sanders@gmail.com',
     users: [
         {
             email: 'bernie.sanders@gmail.com',
