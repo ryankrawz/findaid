@@ -39,7 +39,7 @@ const initialStore = {
             comments: [
                 {
                     user: 'bernie.sanders@gmail.com',
-                    text: 'This outrageous! We must rally for change.'
+                    text: 'This is outrageous! We must rally for change.'
                 }
             ]
         }

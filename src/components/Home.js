@@ -59,7 +59,9 @@ function Home() {
                             {post.title}
                             {post.location}
                         </div>
-                        <button>Learn More</button>
+                        <a href={`/${post.id}`}>
+                            <button>Learn More</button>
+                        </a>
                         <img src={publicUrl(post.images[0])}/>
                         {post.description}
                     </div>
