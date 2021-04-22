@@ -7,8 +7,7 @@ const initialStore = {
             name: 'Bernie Sanders',
             bio: 'I am once again asking for your financial support.',
             photo: 'berniesanders.jpg',
-            isSuperUser: true,
-            saved: ['357458']
+            isSuperUser: true
         }
     ],
     posts: [
@@ -32,10 +31,10 @@ const initialStore = {
                 }
             ],
             events: [
-                {
-                    name: 'Town Hall Meeting',
-                    link: 'atlanta.org'
-                }
+                // {
+                //     name: 'Town Hall Meeting',
+                //     link: 'atlanta.org'
+                // }
             ],
             comments: [
                 {

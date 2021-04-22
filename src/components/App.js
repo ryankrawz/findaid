@@ -8,6 +8,7 @@ import CreatePost from './CreatePost';
 import Header from './Header';
 import Home from './Home';
 import LogIn from './LogIn';
+import Post from './Post';
 import Profile from './Profile';
 import SignUp from './SignUp';
 
@@ -31,7 +32,10 @@ function App() {
                             <Route path="/profile/:userId?">
                                 <Profile/>
                             </Route>
-                            <Route path="/:saved?">
+                            <Route path="/:postId">
+                                <Post/>
+                            </Route>
+                            <Route path="/">
                                 <Home/>
                             </Route>
                         </Switch>
