@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 
+import publicUrl from 'utils/publicUrl';
 import { StoreContext } from 'contexts/StoreContext';
 
 function Home() {
@@ -53,7 +54,14 @@ function Home() {
             <section id="post-container">
                 {posts.map(post => (
                     <div key={post.id}>
-                        {post.title}
+                        <button>Like</button>
+                        <div id="post-header">
+                            {post.title}
+                            {post.location}
+                        </div>
+                        <button>Learn More</button>
+                        <img src={publicUrl(post.images[0])}/>
+                        {post.description}
                     </div>
                 ))}
             </section>

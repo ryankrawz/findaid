@@ -6,7 +6,7 @@ const initialStore = {
             password: 'vermontmaplesyrup',
             name: 'Bernie Sanders',
             bio: 'I am once again asking for your financial support.',
-            photo: 'berniesanders.jpg',
+            photo: '/assets/berniesanders.jpg',
             isSuperUser: true
         }
     ],
@@ -17,7 +17,7 @@ const initialStore = {
             title: 'Landfill in Underprivileged Area',
             location: 'Atlanta, GA',
             description: 'A new landfill site has been marked in an impoverished neighborhood without the community members\' consent.',
-            images: ['landfill.jpg', 'atlantaneighborhood.jpg'],
+            images: ['/assets/landfill.jpg', '/assets/atlantaneighborhood.jpg'],
             resourcesInfo: [
                 {
                     name: 'Landfill Zoning Laws',
@@ -31,10 +31,10 @@ const initialStore = {
                 }
             ],
             events: [
-                // {
-                //     name: 'Town Hall Meeting',
-                //     link: 'atlanta.org'
-                // }
+                {
+                    name: 'Town Hall Meeting',
+                    link: 'atlanta.org'
+                }
             ],
             comments: [
                 {
