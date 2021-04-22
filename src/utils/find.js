@@ -1,20 +1,20 @@
 
-export function findUser(userId, users){
-    return users.find(user=>user.id===userId);
+export function findUser(userId, store){
+    return store.users.find(user=>user.id===userId);
   }
 
 export function findComments(post, comments){
-  return comments.filter(comment=>comment.postId===post.id);
+  return store.comments.filter(comment=>comment.postId===post.id);
 }
 
-export function findLikes(post, likes, currentUserId){
-  let postLikes = likes.filter(like=>like.postId===post.id);
+export function findLikes(post, store, currentUserId){
+  let postLikes = store.likes.filter(like=>like.postId===post.id);
   return {
-    self: postLikes.some(like=> like.userId===currentUserId),
+    self: postLikes.some(like=> like.userId===store.currentUserId),
     count: postLikes.length
   }
 }
  
-export function findPosts(userEmail, posts){
-    return posts.filter(post => post.poster === userEmail);
+export function findPosts(userEmail, store){
+    return store.posts.filter(post => post.poster === userEmail);
 }
