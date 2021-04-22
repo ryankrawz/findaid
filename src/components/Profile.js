@@ -13,10 +13,10 @@ function Profile(props) {
         posts, users, currentUserId
      } = useContext(StoreContext);
      const {posts:allPosts} = useContext(StoreContext);
-     const email = params.email ? params.email : currentUserEmail;
+     const email = params.email ? params.email : store.currentUserId;
      const posts = findPosts(userId, allPosts);
-     let liked_events= events.filter(f=> f.likes.userEmail == email);
-     let my_posts= events.filter(f=> f.events.poster == email);
+     let liked_events= props.store.events.filter(f=> f.likes.userEmail == store.currentUserId);
+     let my_posts= props.store.events.filter(f=> f.events.poster == store.currentUserId);
     return ( <div>
       <header className={css.header}>
         <div className={css.photo}>
