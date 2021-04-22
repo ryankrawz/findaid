@@ -22,7 +22,7 @@ function Profile(props) {
     return ( <div>
       <header className={css.header}>
         <div className={css.photo}>
-          <img src={publicUrl(user.photo)} alt="Profile" />
+          
         </div>
     
         
