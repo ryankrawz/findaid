@@ -13,6 +13,7 @@ const initialStore = {
     posts: [
         {
             id: '357458',
+            poster: 'bernie.sanders@gmail.com',
             title: 'Landfill in Underprivileged Area',
             location: 'Atlanta, GA',
             description: 'A new landfill site has been marked in an impoverished neighborhood without the community members\' consent.',
@@ -43,7 +44,14 @@ const initialStore = {
             ]
         }
     ],
-
+    likes:[
+        {
+            datetime:"2020-02-09T22:53:40Z",
+            postId:"357458",
+            userEmail: "bernie.sanders@gmail.com"
+        }
+        
+    ]
 }
 
 export default initialStore;
