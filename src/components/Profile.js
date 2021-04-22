@@ -10,13 +10,15 @@ import { Redirect } from "react-router-dom";
 function Profile(props) {
     const params = useParams();
     let {
-        posts, users, currentUserId
+        store, posts, users, currentUser
      } = useContext(StoreContext);
+     
+     var user = 'bernie.sanders@gmail.com';
      const {posts:allPosts} = useContext(StoreContext);
-     const email = params.email ? params.email : store.currentUserId;
-     const posts = findPosts(userId, allPosts);
-     let liked_events= props.store.events.filter(f=> f.likes.userEmail == store.currentUserId);
-     let my_posts= props.store.events.filter(f=> f.events.poster == store.currentUserId);
+     const email = params.email ? params.email : currentUser;
+     console.log(user);
+     let liked_events= posts.filter(f=> f.userEmail == currentUser);
+     let my_posts= posts.filter(f=> f.poster == currentUser);
     return ( <div>
       <header className={css.header}>
         <div className={css.photo}>
