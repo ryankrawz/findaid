@@ -8,7 +8,7 @@ function Post() {
     const {posts, users} = useContext(StoreContext);
     const {postId} = useParams();
     const currentPost = posts.find(p => p.id === postId);
-    const currentUser = users.find(u => u.email === currentPost.poster)
+    const currentUser = users.find(u => u.email === currentPost.poster);
 
     return (
         <div>
