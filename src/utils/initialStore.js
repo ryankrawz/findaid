@@ -42,6 +42,38 @@ const initialStore = {
                     text: 'This is outrageous! We must rally for change.'
                 }
             ]
+        },
+        {
+            id: '357459',
+            poster: 'bernie.sanders@gmail.com',
+            title: 'RISKY BYHALIA CONNECTION PIPELINE THREATENS TENNESSEE & MISSISSIPPI HEALTH, WATER SUPPLY',
+            location: 'Memphis, TN',
+            description: 'In December 2019, Plains All-American and Valero pipeline companies announced plans to build the 49-mile Byhalia Pipeline through southwestern Tennessee and northwestern Mississippi. ',
+            images: ['/assets/landfill.jpg', '/assets/atlantaneighborhood.jpg'],
+            resourcesInfo: [
+                {
+                    name: 'FracTracker',
+                    link: 'lhttps://www.fractracker.org/2021/03/risky-byhalia-pipeline-threatens-tennessee-mississippi-health-and-water-supply/'
+                }
+            ],
+            fundsPetitions: [
+                {name: 'No Oil In Our Soil',
+                link: '//www.ipetitions.com/petition/no-oil-in-our-soil'
+                
+                }
+            ],
+            events: [
+                {
+                    name: 'Town Hall Meeting',
+                    link: 'memphis.org'
+                }
+            ],
+            comments: [
+                {
+                    user: 'bernie.sanders@gmail.com',
+                    text: 'This is outrageous! We must rally for change.'
+                }
+            ]
         }
     ],
     likes:[

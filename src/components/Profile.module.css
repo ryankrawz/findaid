@@ -21,10 +21,24 @@
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 5px;
 }
-
+.float-left {
+    float:left;
+    width:33%;
+}
+.Row {
+    display: table;
+    width: 100%; /*Optional*/
+    table-layout: fixed; /*Optional*/
+    border-spacing: 10px; /*Optional*/
+}
+.Column {
+    display: table-cell;
+ 
+}
 .photo{
     flex-basis: 25%;
     margin-right: 20px;
+    max-width: 10%;
 }
 .photo img {
     object-fit: cover;
@@ -38,7 +52,10 @@
     font-size: 28px;
     
 }
-
+.grid-container {
+    display: inline-grid;
+    grid-column-gap: 50px;
+  }
 .user {
     padding: 0px 16px;
     margin-bottom:10px;
@@ -46,3 +63,4 @@
 .user .name{
     font-weight: 600;
 }
+

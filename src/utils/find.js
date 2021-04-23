@@ -1,6 +1,6 @@
 
-export function findUser(userId, store){
-    return store.users.find(user=>user.id===userId);
+export function findUser(currentUser, users){
+    return users.find(user=>currentUser===user.email);
   }
 
 export function findComments(post, store){
@@ -15,6 +15,19 @@ export function findLikes(post, store, currentUser){
   }
 }
  
-export function findPosts(userEmail, store){
-    return store.posts.filter(post => post.poster === userEmail);
+export function findPosts(userEmail, posts){
+
+    return posts.filter(post => post.poster === userEmail);
+}
+
+export function findLikedPosts(userEmail, posts, likes){
+  let liked = likes.filter(like => like.userEmail === userEmail);
+  var l = [];
+  for (var x in liked){
+    console.log(liked[x]);
+    console.log(liked[x].postId);
+    l.push(liked[x].postId);
+  }
+  console.log(l);
+  return posts.filter(({id}) => !l.includes(id));
 }
