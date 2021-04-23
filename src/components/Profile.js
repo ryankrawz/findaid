@@ -46,7 +46,8 @@ function Profile(props) {
           <div class="grid-row">
           <div class="grid-item">
             {liked_posts.map(post => (
-              <a href={`/${post.id}`}>
+              // <a href={`/${post.id}`}>
+              <Link to={`/${post.id}`}>
                 <div key={post.id}>
                   <div id="post-header">
                     {post.title}
@@ -54,7 +55,7 @@ function Profile(props) {
                   <PostThumbnail post={post}/>
                 </div>
 
-              </a>
+              </Link>
             ))}
             </div>
           </div>
