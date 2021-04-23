@@ -14,7 +14,12 @@ function Header(props) {
                 </Link>
             </div>
             <div className={css.headerItem}>
-                FindAid
+                <strong>FindAid</strong>
+            </div>
+            <div className={css.headerItem}>
+                <Link to="createpost">
+                    <img src={publicUrl('assets/createpost.svg')} alt="CreatePost"/>
+                </Link>
             </div>
             <div className={css.headerItem}>
                 <Link to="profile">
