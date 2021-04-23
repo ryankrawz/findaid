@@ -1,11 +1,11 @@
-import React, { createContext, useEffect, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 import initialStore from 'utils/initialStore';
 
 export const StoreContext = createContext();
 
 function StoreContextProvider(props) {
-    const [store, setStore] = useState(initialStore);
+    const store = useState(initialStore)[0];
 
 	return (
         <StoreContext.Provider value={{...store}}>

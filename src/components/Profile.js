@@ -2,26 +2,21 @@ import React from 'react';
 import publicUrl from 'utils/publicUrl';
 import { findUser, findPosts , findLikedPosts} from 'utils/find';
 import PostThumbnail from './PostThumbnail';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import css from './Profile.module.css';
 import { useContext } from 'react';
 import { StoreContext } from 'contexts/StoreContext';
-import { Redirect } from "react-router-dom";
-function Profile(props) {
-  const params = useParams();
+
+function Profile() {
   let {
-    store, posts, users, currentUser, likes
+    posts, users, currentUser, likes
   } = useContext(StoreContext);
 
   var temp = 'bernie.sanders@gmail.com';
   let user = findUser(temp, users)
-  const { posts: allPosts } = useContext(StoreContext);
-  const email = params.email ? params.email : currentUser;
   let my_posts = findPosts(currentUser, posts);
   let liked_posts = findLikedPosts(currentUser,posts, likes);
 
-  
- 
   return (
     <div>
 

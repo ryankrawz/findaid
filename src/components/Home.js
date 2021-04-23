@@ -1,4 +1,5 @@
 import React, { useContext, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import publicUrl from 'utils/publicUrl';
 import { StoreContext } from 'contexts/StoreContext';
@@ -59,10 +60,10 @@ function Home() {
                             {post.title}
                             {post.location}
                         </div>
-                        <a href={`/${post.id}`}>
+                        <Link to={`/${post.id}`}>
                             <button>Learn More</button>
-                        </a>
-                        <img src={publicUrl(post.images[0])}/>
+                        </Link>
+                        <img src={publicUrl(post.images[0])} alt={post.title}/>
                         {post.description}
                     </div>
                 ))}

@@ -14,7 +14,7 @@ function Post() {
         <div>
             <aside>
                 {currentPost.images.map(image => (
-                    <img key={image} src={publicUrl(image)}/>
+                    <img key={image} src={publicUrl(image)} alt={image}/>
                 ))}
                 {currentPost.title}
                 {currentPost.location}
