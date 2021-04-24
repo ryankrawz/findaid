@@ -5,11 +5,9 @@ import initialStore from 'utils/initialStore';
 export const StoreContext = createContext();
 
 function StoreContextProvider(props) {
-    // const store = useState(initialStore)[0];
     const [store, setStore] = useState(initialStore);
 
-    const [currentUserId, setCurrentUserId] = useState('bernie.sanders@gmail.com'); 
-
+    const currentUserId = useState('bernie.sanders@gmail.com')[0]; 
 
     function addPost(images, description, title, location) {
         const post = {

@@ -35,7 +35,7 @@ function Profile() {
       </div>
 
       <div className={css.posts}>
-        Liked Posts
+        Bookmarked Posts
 
         <div class="grid-container">
           <div class="grid-row">

@@ -4,3 +4,78 @@ primary: #33a324
 secondary: #155ed4
 tertiary: #d49115
 */
+
+.search {
+    width: 55%;
+    margin: 1%;
+    border-radius: 5px;
+    border: solid 2px #33a324;
+}
+
+.checkboxContainer {
+    margin-left: 1%;
+}
+
+.checkboxItem {
+    display: block;
+}
+
+.checkboxLabel {
+    margin-left: 0.5%;
+}
+
+.postContainer {
+    margin: 2% 1%;
+    padding: 2%;
+    padding-top: 0;
+    border-radius: 5px;
+    border: solid 2px #33a324;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 2%;
+}
+
+.bookmark {
+    display: inline;
+    font-size: 175%;
+}
+
+.bookmark:hover {
+    cursor: pointer;
+}
+
+.itemTitle {
+    display: inline;
+    margin-left: 2%;
+}
+
+.learnMore {
+    display: block;
+    margin-top: 2%;
+}
+
+.infoContainer {
+    display: block;
+}
+
+.postImage {
+    width: 50%;
+}
+
+.description {
+    margin-top: 2%;
+}
+
+@media only screen and (min-width: 768px) {
+    .infoContainer {
+        display: flex;
+    }
+
+    .description {
+        margin-left: 2%;
+        margin-top: 0;
+    }
+}
