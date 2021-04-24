@@ -1,0 +1,68 @@
+.postContainer {
+    display: block;
+}
+
+.postInfo {
+    margin-left: 5.5%;
+    margin-top: 15%;
+    width: 97%;
+}
+
+.postImage {
+    width: 90%;
+}
+
+.infoContainer {
+    margin-top: 1.5%;
+    margin-left: 5.5%;
+}
+
+.bookmark {
+    display: block;
+    width: 7%;
+    margin-top: 6%;
+    margin-left: 40%;
+    margin-bottom: 6%;
+    font-size: 200%;
+}
+
+.bookmark:hover {
+    cursor: pointer;
+}
+
+.linkContainer {
+    margin-bottom: 10%;
+}
+
+.commentContainer {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    margin-right: 5%;
+    padding: 1% 5%;
+    background-color: #d4d4d4;
+    border-radius: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+    .postContainer {
+        display: flex;
+    }
+
+    .postInfo {
+        margin-left: 1.5%;
+        margin-top: 1.5%;
+        width: 30%;
+    }
+
+    .bookmark {
+        margin-left: 1%;
+    }
+
+    .infoContainer {
+        margin-left: 4%;
+    }
+
+    .commentContainer {
+        margin-right: 0;
+    }
+}

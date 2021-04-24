@@ -31,6 +31,12 @@ function Home() {
         setPosts(filteredPosts);
     }
 
+    /*
+    function handleLike(event) {
+        // Handle like functionality
+    }
+    */
+
     function handleSearch(event) {
         const searchExp = RegExp(`${event.target.value}`, 'i');
         const searchedPosts = allPosts.filter(post => {
