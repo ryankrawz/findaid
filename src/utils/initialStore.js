@@ -29,19 +29,19 @@ const initialStore = {
             resourcesInfo: [
                 {
                     name: 'Landfill Zoning Laws',
-                    link: 'landfillagency.org'
+                    link: '//www.atlantaga.gov/government/departments/city-planning/office-of-zoning-development/zoning'
                 }
             ],
             fundsPetitions: [
                 {
                     name: 'Stop the Landfill Fund',
-                    link: 'stopthelandfill.com'
+                    link: '//www.stopthelandfill.com/donate.html'
                 }
             ],
             events: [
                 {
                     name: 'Town Hall Meeting',
-                    link: 'atlanta.org'
+                    link: '//www.atlantadowntown.com/cap/about/town-hall-meetings'
                 }
             ],
             comments: [
@@ -61,7 +61,7 @@ const initialStore = {
             resourcesInfo: [
                 {
                     name: 'FracTracker',
-                    link: 'lhttps://www.fractracker.org/2021/03/risky-byhalia-pipeline-threatens-tennessee-mississippi-health-and-water-supply/'
+                    link: '//www.fractracker.org/2021/03/risky-byhalia-pipeline-threatens-tennessee-mississippi-health-and-water-supply/'
                 }
             ],
             fundsPetitions: [
@@ -73,7 +73,7 @@ const initialStore = {
             events: [
                 {
                     name: 'Town Hall Meeting',
-                    link: 'memphis.org'
+                    link: '//www.memphis.org'
                 }
             ],
             comments: [
