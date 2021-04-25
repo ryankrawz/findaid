@@ -1,88 +1,101 @@
 import React from 'react';
 import publicUrl from 'utils/publicUrl';
-import { findUser, findPosts , findLikedPosts} from 'utils/find';
+import { findUser, findPosts, findLikedPosts } from 'utils/find';
 import PostThumbnail from './PostThumbnail';
 import { Link } from 'react-router-dom';
 import css from './Profile.module.css';
 import { useContext } from 'react';
 import { StoreContext } from 'contexts/StoreContext';
 
+
 function Profile() {
   let {
-    posts, users, currentUser, likes
+    currentUser, posts, users, likes
   } = useContext(StoreContext);
 
-  var temp = 'bernie.sanders@gmail.com';
-  let user = findUser(temp, users)
+  
+  
+  
+  let user = findUser(currentUser, users);
   let my_posts = findPosts(currentUser, posts);
-  let liked_posts = findLikedPosts(currentUser,posts, likes);
+  let liked_posts = findLikedPosts(currentUser, posts, likes);
 
   return (
     <div>
 
       <div class="Row">
-        <div align="center" class="float-left" className={css.photo}>
+        <div align="center" className={css.photo}>
           <img src={publicUrl(user.photo)} alt="Profile" />
         </div>
 
         <div align="center" class="float-left" className={css.user} >
           <div className={css.name}>
             {user.isSuperUser}
-            <img src='assets/superuser.png' width="20" alt="superuser" />
-            {user.name}</div>
+            
+
+           <h1> <img src='assets/superuser.png' width="30" alt="superuser" />{user.name}</h1></div>
           <div className={css.bio}>{user.bio}</div>
         </div>
       </div>
-
-      <div className={css.posts}>
-        Bookmarked Posts
-
+<hr></hr>
+      
+        <h2 align="center" >
+        BookMarked Posts
+        </h2>
+        <div className={css.posts}>
         <div class="grid-container">
-          <div class="grid-row">
-          <div class="grid-item">
-            {liked_posts.map(post => (
-              // <a href={`/${post.id}`}>
-              <Link to={`/${post.id}`}>
-                <div key={post.id}>
-                  <div id="post-header">
-                    {post.title}
-                  </div>
-                  <PostThumbnail post={post}/>
-                </div>
+          <div className={css.infoContainer} class="grid-row">
 
-              </Link>
-            ))}
+            <div>
+
+              {liked_posts.map(post => (
+                <div className={css.postContainer}>
+                  <a href={`/${post.id}`}>
+                    <div key={post.id}>
+                      <div className={css.itemheader} id="post-header">
+                        {post.title}
+                      </div>
+                      <img class={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
+                    </div>
+
+                  </a>
+                </div>
+              ))}
+
             </div>
           </div>
         </div>
-       
-
-
       </div>
 
-      <div className={css.posts}>
+<hr></hr>
+<h2 align="center" >
         My Posts
+        </h2>
+      <div className={css.posts}>
+      
 
         <div class="grid-container">
-          <div class="grid-row">
-          <div class="grid-item">
-            {my_posts.map(post => (
-              <a href={`/${post.id}`}>
-                <div key={post.id}>
-                  <div id="post-header">
-                    {post.title}
-                  </div>
-                  <PostThumbnail post={post}/>
-                </div>
+          <div className={css.infoContainer} class="grid-row">
 
-              </a>
-            ))}
+            <div >
+
+              {my_posts.map(post => (
+                <div className={css.postContainer}>
+                  <a href={`/${post.id}`}>
+                    <div key={post.id}>
+                      <div className={css.itemheader} id="post-header">
+                        {post.title}
+                      </div>
+                      <img class={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
+                    </div>
+
+                  </a>
+                </div>
+              ))}
+
             </div>
           </div>
         </div>
-       
-
-
       </div>
 
     </div>

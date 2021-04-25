@@ -8,6 +8,14 @@ const initialStore = {
             bio: 'I am once again asking for your financial support.',
             photo: '/assets/berniesanders.jpg',
             isSuperUser: true
+        },
+        {
+            email: 'isabelle.smyth@gmail.com',
+            password: 'bceagles',
+            name: 'Isabelle Smyth',
+            bio: 'Looking to help my community BC 21',
+            photo: '/assets/isabelle.jpg',
+            isSuperUser: true
         }
     ],
     posts: [
