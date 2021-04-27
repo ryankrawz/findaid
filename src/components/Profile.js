@@ -1,8 +1,6 @@
 import React from 'react';
 import publicUrl from 'utils/publicUrl';
 import { findUser, findPosts, findLikedPosts } from 'utils/find';
-import PostThumbnail from './PostThumbnail';
-import { Link } from 'react-router-dom';
 import css from './Profile.module.css';
 import { useContext } from 'react';
 import { StoreContext } from 'contexts/StoreContext';

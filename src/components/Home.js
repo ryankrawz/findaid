@@ -6,7 +6,7 @@ import publicUrl from 'utils/publicUrl';
 import { StoreContext } from 'contexts/StoreContext';
 
 function Home() {
-    const {posts: allPosts} = useContext(StoreContext);
+    const {posts: allPosts, likes, currentUser, addLike, removeLike} = useContext(StoreContext);
     const [posts, setPosts] = useState(allPosts);
     const [filters, setFilters] = useState({
         resourcesInfo: false,
@@ -31,11 +31,9 @@ function Home() {
         setPosts(filteredPosts);
     }
 
-    /*
-    function handleLike(event) {
-        // Handle like functionality
+    function handleLike(postId) {
+        addLike(postId);
     }
-    */
 
     function handleSearch(event) {
         const searchExp = RegExp(`${event.target.value}`, 'i');
@@ -43,6 +41,10 @@ function Home() {
             return searchExp.test(post.title) || searchExp.test(post.location) || searchExp.test(post.description);
         });
         setPosts(searchedPosts);
+    }
+
+    function handleUnlike(postId) {
+        removeLike(postId);
     }
 
     return (
@@ -69,14 +71,17 @@ function Home() {
                 {posts.map(post => (
                     <div key={post.id} className={css.postContainer}>
                         <div className={css.itemHeader}>
-                            <i class={`far fa-bookmark ${css.bookmark}`}></i>
+                        {likes.find(like => like.postId === post.id && like.userEmail === currentUser) ?
+                            <i className={`fas fa-bookmark ${css.bookmark}`} onClick={e => handleUnlike(post.id)}></i> :
+                            <i className={`far fa-bookmark ${css.bookmark}`} onClick={e => handleLike(post.id)}></i>
+                        }
                             <div className={css.itemTitle}>
                                 <h2>{post.title}</h2>
                                 <h3>{post.location}</h3>
                             </div>
                         </div>
                         <div className={css.infoContainer}>
-                            <img class={css.postImage} src={publicUrl(post.images[0])} alt={post.title}/>
+                            <img className={css.postImage} src={publicUrl(post.images[0])} alt={post.title}/>
                             <p className={css.description}>{post.description}</p>
                         </div>
                         <Link className={css.learnMore} to={`/${post.id}`}>

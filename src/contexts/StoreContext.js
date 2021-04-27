@@ -19,15 +19,35 @@ function StoreContextProvider(props) {
           images,
           datetime: new Date().toISOString()
         };
+
         setStore({
             ...store,
             posts: store.posts.concat(post)
           });
     }
 
+    function addLike(postId) {
+        const newLike = {
+            datetime: new Date().toISOString(),
+            postId,
+            userEmail: currentUserId
+        }
+
+        setStore({
+            ...store,
+            likes: store.likes.concat(newLike)
+        })
+    }
+
+    function removeLike(postId) {
+        setStore({
+            ...store,
+            likes: store.likes.filter(like => !(like.postId === postId && like.userEmail === currentUserId))
+        })
+    }
 
 	return (
-        <StoreContext.Provider value={{...store, addPost}}>
+        <StoreContext.Provider value={{...store, addPost, addLike, removeLike}}>
             {props.children}
         </StoreContext.Provider>
     )

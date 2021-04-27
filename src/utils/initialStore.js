@@ -15,7 +15,7 @@ const initialStore = {
             name: 'Isabelle Smyth',
             bio: 'Looking to help my community BC 21',
             photo: '/assets/isabelle.jpg',
-            isSuperUser: true
+            isSuperUser: false
         }
     ],
     posts: [
@@ -54,10 +54,10 @@ const initialStore = {
         {
             id: '357459',
             poster: 'bernie.sanders@gmail.com',
-            title: 'RISKY BYHALIA CONNECTION PIPELINE THREATENS TENNESSEE & MISSISSIPPI HEALTH, WATER SUPPLY',
+            title: 'Risky Byhalia Connection Pipeline Threatens TN & MS Health, Water Supply',
             location: 'Memphis, TN',
             description: 'In December 2019, Plains All-American and Valero pipeline companies announced plans to build the 49-mile Byhalia Pipeline through southwestern Tennessee and northwestern Mississippi. ',
-            images: ['/assets/landfill.jpg', '/assets/atlantaneighborhood.jpg'],
+            images: ['/assets/pipeline.jpg', '/assets/coalpollution.jpg', '/assets/tennesseestreet.jpg'],
             resourcesInfo: [
                 {
                     name: 'FracTracker',
@@ -70,24 +70,19 @@ const initialStore = {
                 
                 }
             ],
-            events: [
-                {
-                    name: 'Town Hall Meeting',
-                    link: '//www.memphis.org'
-                }
-            ],
+            events: [],
             comments: [
                 {
-                    user: 'bernie.sanders@gmail.com',
-                    text: 'This is outrageous! We must rally for change.'
+                    user: 'isabelle.smyth@gmail.com',
+                    text: 'As a resident of Tennessee, I\'ve been very frustrated with the government\'s slow response.'
                 }
             ]
         }
     ],
     likes:[
         {
-            datetime:"2020-02-09T22:53:40Z",
-            postId:"357458",
+            datetime: "2020-02-09T22:53:40Z",
+            postId: "357458",
             userEmail: "bernie.sanders@gmail.com"
         }
         

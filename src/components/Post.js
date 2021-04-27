@@ -6,22 +6,32 @@ import publicUrl from 'utils/publicUrl';
 import { StoreContext } from 'contexts/StoreContext';
 
 function Post() {
-    const {posts, users} = useContext(StoreContext);
+    const {posts, users, likes, addLike, removeLike} = useContext(StoreContext);
     const {postId} = useParams();
     const currentPost = posts.find(p => p.id === postId);
     const currentUser = users.find(u => u.email === currentPost.poster);
-    /* Support for clicking through photos
+    // Implement photo scroll
     const currentImage = 0;
-    */
+
+    function handleLike() {
+        addLike(postId);
+    }
+
+    function handleUnlike() {
+        removeLike(postId);
+    }
 
     return (
         <div className={css.postContainer}>
-            <aside class={css.postInfo}>
-                <img className={css.postImage} src={publicUrl(currentPost.images[0])} alt={currentPost.images[0]}/>
+            <aside className={css.postInfo}>
+                <img className={css.postImage} src={publicUrl(currentPost.images[currentImage])} alt={currentPost.images[currentImage]}/>
                 <h3>{currentPost.title}</h3>
                 <h4>{currentPost.location}</h4>
                 {currentPost.description}
-                <i class={`far fa-bookmark ${css.bookmark}`}></i>
+                {likes.find(like => like.postId === postId && like.userEmail === currentUser.email) ?
+                    <i className={`fas fa-bookmark ${css.bookmark}`} onClick={handleUnlike}></i> :
+                    <i className={`far fa-bookmark ${css.bookmark}`} onClick={handleLike}></i>
+                }
             </aside>
             <div className={css.infoContainer}>
                 <section>
@@ -49,7 +59,7 @@ function Post() {
                     <div>
                         {currentPost.comments.map(comment => (
                             <div key={comment.text} className={css.commentContainer}>
-                                <h5>{currentUser.isSuperUser && <span><i class="fas fa-star"></i>&nbsp;</span>}{comment.user}</h5>
+                                <h5>{currentUser.isSuperUser && <span><i className="fas fa-star"></i>&nbsp;</span>}{comment.user}</h5>
                                 <p>{comment.text}</p>
                             </div>
                         ))}
