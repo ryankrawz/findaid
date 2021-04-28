@@ -1,4 +1,4 @@
-import React, { useContext} from 'react';
+import React, { useContext, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import css from './Post.module.css';
@@ -7,14 +7,23 @@ import { StoreContext } from 'contexts/StoreContext';
 
 function Post() {
     const {posts, users, likes, addLike, removeLike} = useContext(StoreContext);
+    const [currentImage, setCurrentImage] = useState(0);
     const {postId} = useParams();
     const currentPost = posts.find(p => p.id === postId);
     const currentUser = users.find(u => u.email === currentPost.poster);
-    // Implement photo scroll
-    const currentImage = 0;
 
     function handleLike() {
         addLike(postId);
+    }
+
+    function handleNextImage() {
+        const nextImage = currentImage < currentPost.images.length - 1 ? currentImage + 1 : 0;
+        setCurrentImage(nextImage);
+    }
+
+    function handlePrevImage() {
+        const nextImage = currentImage > 0 ? currentImage - 1 : currentPost.images.length - 1;
+        setCurrentImage(nextImage);
     }
 
     function handleUnlike() {
@@ -25,7 +34,12 @@ function Post() {
         <div className={css.postContainer}>
             <aside className={css.postInfo}>
                 <img className={css.postImage} src={publicUrl(currentPost.images[currentImage])} alt={currentPost.images[currentImage]}/>
-                <h3>{currentPost.title}</h3>
+                <div className={css.scrollContainer}>
+                    <i className={`fas fa-chevron-left ${css.scrollPhoto}`} onClick={handlePrevImage}></i>
+                    &nbsp;&nbsp;
+                    <i className={`fas fa-chevron-right ${css.scrollPhoto}`} onClick={handleNextImage}></i>
+                </div>
+                <h3 className={css.postTitle}>{currentPost.title}</h3>
                 <h4>{currentPost.location}</h4>
                 {currentPost.description}
                 {likes.find(like => like.postId === postId && like.userEmail === currentUser.email) ?

@@ -12,6 +12,23 @@
     width: 90%;
 }
 
+.scrollContainer {
+    display: block;
+    margin-top: 1%;
+}
+
+.scrollPhoto {
+    font-size: 125%;
+}
+
+.scrollPhoto:hover {
+    cursor: pointer;
+}
+
+.postTitle {
+    margin-top: 2%;
+}
+
 .infoContainer {
     margin-top: 1.5%;
     margin-left: 5.5%;
