@@ -73,7 +73,10 @@ function Post() {
                     <div>
                         {currentPost.comments.map(comment => (
                             <div key={comment.text} className={css.commentContainer}>
-                                <h5>{currentUser.isSuperUser && <span><i className="fas fa-star"></i>&nbsp;</span>}{comment.user}</h5>
+                                <h5>{users.find(user => user.email === comment.user).isSuperUser &&
+                                    <span><i className="fas fa-star"></i>&nbsp;</span>
+                                }
+                                {comment.user}</h5>
                                 <p>{comment.text}</p>
                             </div>
                         ))}
