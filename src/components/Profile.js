@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import publicUrl from 'utils/publicUrl';
 import { findUser, findPosts, findLikedPosts } from 'utils/find';
 import css from './Profile.module.css';
@@ -21,80 +22,49 @@ function Profile() {
   return (
     <div>
 
-      <div class="Row">
+      <div>
         <div align="center" className={css.photo}>
           <img src={publicUrl(user.photo)} alt="Profile" />
         </div>
 
-        <div align="center" class="float-left" className={css.user} >
+        <div align="center" className={css.user} >
           <div className={css.name}>
-            {user.isSuperUser}
             
 
-           <h1> <img src='assets/superuser.png' width="30" alt="superuser" />{user.name}</h1></div>
+           <h1>{user.isSuperUser && <span><img src='assets/superuser.png' width="30" alt="superuser"/>&nbsp;</span>}{user.name}</h1></div>
           <div className={css.bio}>{user.bio}</div>
         </div>
       </div>
-<hr></hr>
+<hr/>
       
-        <h2 align="center" >
-        BookMarked Posts
-        </h2>
-        <div className={css.posts}>
-        <div class="grid-container">
-          <div className={css.infoContainer} class="grid-row">
-
-            <div>
-
+        <h2 align="center" >Bookmarked Posts</h2>
+          <div className={css.infoContainer}>
               {liked_posts.map(post => (
                 <div className={css.postContainer}>
-                  <a href={`/${post.id}`}>
+                  <Link key={post.id} to={`/${post.id}`} className={css.postLink}>
                     <div key={post.id}>
-                      <div className={css.itemheader} id="post-header">
-                        {post.title}
-                      </div>
-                      <img class={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
+                          <h4>{post.title}</h4>
+                          <img className={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
                     </div>
-
-                  </a>
+                  </Link>
                 </div>
               ))}
-
-            </div>
           </div>
-        </div>
-      </div>
 
-<hr></hr>
-<h2 align="center" >
-        My Posts
-        </h2>
-      <div className={css.posts}>
-      
-
-        <div class="grid-container">
-          <div className={css.infoContainer} class="grid-row">
-
-            <div >
-
+<hr/>
+<h2 align="center">My Posts</h2>
+          <div className={css.infoContainer}>
               {my_posts.map(post => (
                 <div className={css.postContainer}>
-                  <a href={`/${post.id}`}>
+                  <Link key={post.id} to={`/${post.id}`} className={css.postLink}>
                     <div key={post.id}>
-                      <div className={css.itemheader} id="post-header">
-                        {post.title}
-                      </div>
-                      <img class={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
+                          <h4>{post.title}</h4>
+                          <img className={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
                     </div>
-
-                  </a>
+                  </Link>
                 </div>
               ))}
-
-            </div>
           </div>
-        </div>
-      </div>
 
     </div>
 
