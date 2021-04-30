@@ -29,7 +29,7 @@ function App() {
                             <Route path="/createpost">
                                 <CreatePost/>
                             </Route>
-                            <Route path="/profile/:userId?">
+                            <Route path="/profile">
                                 <Profile/>
                             </Route>
                             <Route path="/:postId">
