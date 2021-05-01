@@ -14,9 +14,11 @@ function Header(props) {
                 </Link>
             </div>
             <div className={css.headerItem}>
+                <Link to="/" style={{ color: 'inherit', textDecoration: 'inherit'}}>
                 <strong>FindAid</strong>
                 &nbsp;
                 <img className={css.logo} src={publicUrl('/findaidlogo.png')} alt="FindAid logo" width="35px" height="35px"/>
+                </Link>
             </div>
             <div className={css.headerItem}>
                 <Link to="createpost">
