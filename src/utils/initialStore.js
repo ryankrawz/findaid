@@ -30,19 +30,19 @@ const initialStore = {
                 {
                     name: 'Landfill Zoning Laws',
                     link: '//www.atlantaga.gov/government/departments/city-planning/office-of-zoning-development/zoning'
-                }
+                },
             ],
             fundsPetitions: [
                 {
                     name: 'Stop the Landfill Fund',
                     link: '//www.stopthelandfill.com/donate.html'
-                }
+                },
             ],
             events: [
                 {
                     name: 'Town Hall Meeting',
                     link: '//www.atlantadowntown.com/cap/about/town-hall-meetings'
-                }
+                },
             ],
             comments: [
                 {
