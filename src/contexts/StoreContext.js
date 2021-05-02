@@ -1,8 +1,6 @@
 import React, { createContext, useState } from 'react';
 import uniqueId from 'utils/uniqueId.js';
 import initialStore from 'utils/initialStore';
-import publicUrl from 'utils/publicUrl';
-
 
 export const StoreContext = createContext();
 
@@ -11,50 +9,27 @@ function StoreContextProvider(props) {
 
     const currentUserId = useState('bernie.sanders@gmail.com')[0]; 
 
-    function addPost(images, description, title, location, recourceName,recourceLink, petitionName,petitionLink, eventName, eventLink) {
-        const recources = {
-            name: recourceName,
-            link: recourceLink,
-        }
-        const recourcesArray = [];
-        recourcesArray.concat(recources);
-
-        const pretitions = {
-            name : petitionName,
-            link : petitionLink,
-        }
-        const petitionsArray = [];
-        petitionsArray.concat(pretitions);
-
-        const event = {
-            name : eventName,
-            link : eventLink,
-        }
-        const eventsArray = [];
-        eventsArray.concat(event);
-
-        const comment = {
-            user : '',
-            comment: '',
-        }
-        const commentArray = [];
-        commentArray.concat(comment);
-
-        // to add multiple images use this array
-        const imageArray = [];
-        imageArray.concat(images);
-
+    function addPost(photo, description, title, location, resourceName, resourceLink, petitionName, petitionLink, eventName, eventLink) {
         const post = {
           id: uniqueId(""),
           poster: currentUserId,
           title: title,
           location: location,
           description: description,
-          images: images,
-          resourcesInfo: recourcesArray,
-          fundsPetitions: petitionsArray,
-          events: eventsArray,
-          comments : commentArray,
+          images: [photo],
+          resourcesInfo: [{
+              name: resourceName,
+              link: resourceLink,
+          }],
+          fundsPetitions: [{
+              name : petitionName,
+              link : petitionLink,
+          }],
+          events: [{
+              name : eventName,
+              link : eventLink,
+          }],
+          comments : [],
         };
 
         setStore({

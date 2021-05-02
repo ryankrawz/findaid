@@ -2,11 +2,7 @@ import React, { useState, useContext } from 'react';
 import { StoreContext } from 'contexts/StoreContext';
 import css from './CreatePost.module.css';
 import FileLoader from './FileLoader.js';
-import {
-  useHistory
-} from "react-router-dom";
-import publicUrl from 'utils/publicUrl';
-
+import { useHistory } from "react-router-dom";
 
 function CreatePost(props) {
   const [dragging, setDragging] = useState(false); // to show a dragging effect
@@ -31,7 +27,6 @@ function CreatePost(props) {
 
   let {
     addPost,
-
   } = useContext(StoreContext);
 
 
@@ -53,9 +48,7 @@ function CreatePost(props) {
       if (file.type.match(/image.*/)){
 				let reader = new FileReader();			
 				reader.onloadend = (e) => {
-					// TODO: call setPhoto with e.target.result (this is a Base64 image string)
           setPhoto(e.target.result);
-		
 				};
 				reader.readAsDataURL(file);
 			}
@@ -75,10 +68,10 @@ function CreatePost(props) {
     setLocation(e.target.value);
   }
 
-  function handleRecourceChange(e){
+  function handleResourceChange(e){
     setResc(e.target.value);
   }  
-  function handleRecourceTitleChange(e){
+  function handleResourceTitleChange(e){
     setrescTitle(e.target.value);
   }
   
@@ -98,13 +91,22 @@ function CreatePost(props) {
   }
 
   function handleSubmit(e){
-     e.preventDefault();
-      if (photo===null){
+    e.preventDefault();
+    if (!photo) {
       setError('You need to add a photo!');
+      return;
+    } else if (!title) {
+      setError('You need to add a title!');
+      return;
+    } else if (!location) {
+      setError('You need to add a location!');
+      return;
+    } else if (!desc) {
+      setError('You need to add a description!');
       return;
     }
 
-    addPost(photo, desc,title, location, rescTitle, resc, petTitle, pet, eventTitle, event); 
+    addPost(photo, desc, title, location, rescTitle, resc, petTitle, pet, eventTitle, event); 
     history.push('/');
     setError('');
   }
@@ -131,79 +133,69 @@ function CreatePost(props) {
         </div>
         
         <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a Post Title:
+            Title:
           </h5>
-          <textarea placeholder="Provide Title..." rows="2" value={title} onChange={handleTitleChange}/>
+          <textarea placeholder="..." rows="2" value={title} onChange={handleTitleChange}/>
         </div>
 
         <div className={css.desc} >
         <h5>
-            Please Enter a Location:
+            Location:
           </h5>
-					{/* TODO: add textarea */}
-          <textarea placeholder="Location..." rows="2" value={location} onChange={handleLocationChange}/>
+          <textarea placeholder="..." rows="2" value={location} onChange={handleLocationChange}/>
         </div>   
 
             <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a Description of the post:
+            Description:
           </h5>
-          <textarea placeholder="Describe..." rows="2" value={desc} onChange={handleDescChange}/>
+          <textarea placeholder="..." rows="2" value={desc} onChange={handleDescChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a Recource Name:
+            Resources &amp; Information name (optional):
           </h5>
-          <textarea placeholder="Recource Name..." rows="2" value={rescTitle} onChange={handleRecourceTitleChange}/>
+          <textarea placeholder="..." rows="2" value={rescTitle} onChange={handleResourceTitleChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a Link for the recource:
+            Resources &amp; Information link:
           </h5>
-          <textarea placeholder="Describe..." rows="2" value={resc} onChange={handleRecourceChange}/>
+          <textarea placeholder="..." rows="2" value={resc} onChange={handleResourceChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a Petition Title:
+            Funds &amp; Petitions name (optional):
           </h5>
-          <textarea placeholder="Petition Title..." rows="2" value={petTitle} onChange={handlePretitionTitleChange}/>
+          <textarea placeholder="..." rows="2" value={petTitle} onChange={handlePretitionTitleChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter a link to the petition:
+            Funds &amp; Petitions link:
           </h5>
-          <textarea placeholder="Petition link..." rows="2" value={pet} onChange={handlePretitionChange}/>
+          <textarea placeholder="..." rows="2" value={pet} onChange={handlePretitionChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter an Events title:
+            Event name (optional):
           </h5>
-          <textarea placeholder="Events Title..." rows="2" value={eventTitle} onChange={handleEventsTitleChange}/>
+          <textarea placeholder="..." rows="2" value={eventTitle} onChange={handleEventsTitleChange}/>
           </div>
 
           <div className={css.desc} >
-					{/* TODO: add textarea */}
           <h5>
-            Please Enter as event link:
+            Event link:
           </h5>
-          <textarea placeholder="Event Link..." rows="2" value={event} onChange={handleEventsChange}/>
+          <textarea placeholder="..." rows="2" value={event} onChange={handleEventsChange}/>
           </div>
 
         <div className={css.error}>
-					{/* TODO: show error message */}
           {error}
         </div>
         <div className={css.actions}>

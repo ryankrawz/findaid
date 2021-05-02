@@ -22,13 +22,9 @@ export function findPosts(userEmail, posts){
 
 export function findLikedPosts(userEmail, posts, likes){
   let liked = likes.filter(like => like.userEmail === userEmail);
-  console.log(liked);
   var l = [];
   for (var x in liked){
-    console.log(liked[x]);
-    console.log(liked[x].postId);
     l.push(liked[x].postId);
   }
-  console.log(l);
   return posts.filter(({id}) => l.includes(id));
 }

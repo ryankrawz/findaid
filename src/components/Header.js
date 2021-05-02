@@ -5,7 +5,7 @@ import {
     Link
   } from "react-router-dom";
 
-function Header(props) {
+function Header() {
     return (
         <div className={css.header}>
             <div className={css.headerItem}>

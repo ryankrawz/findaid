@@ -40,8 +40,8 @@ function Profile() {
         <h2 align="center" >Bookmarked Posts</h2>
           <div className={css.infoContainer}>
               {liked_posts.map(post => (
-                <div className={css.postContainer}>
-                  <Link key={post.id} to={`/${post.id}`} className={css.postLink}>
+                <div key={post.id} className={css.postContainer}>
+                  <Link to={`/${post.id}`} className={css.postLink}>
                     <div key={post.id}>
                           <h4>{post.title}</h4>
                           <img className={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
@@ -55,8 +55,8 @@ function Profile() {
 <h2 align="center">My Posts</h2>
           <div className={css.infoContainer}>
               {my_posts.map(post => (
-                <div className={css.postContainer}>
-                  <Link key={post.id} to={`/${post.id}`} className={css.postLink}>
+                <div key={post.id} className={css.postContainer}>
+                  <Link to={`/${post.id}`} className={css.postLink}>
                     <div key={post.id}>
                           <h4>{post.title}</h4>
                           <img className={css.postImage} src={publicUrl(post.images[0])} alt={post.title} />
