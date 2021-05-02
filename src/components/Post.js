@@ -6,8 +6,9 @@ import publicUrl from 'utils/publicUrl';
 import { StoreContext } from 'contexts/StoreContext';
 
 function Post() {
-    const {posts, users, likes, addLike, removeLike} = useContext(StoreContext);
+    const {posts, users, likes, addComment, addLike, removeLike} = useContext(StoreContext);
     const [currentImage, setCurrentImage] = useState(0);
+    const [comment, setComment] = useState('');
     const {postId} = useParams();
     const currentPost = posts.find(p => p.id === postId);
     const currentUser = users.find(u => u.email === currentPost.poster);
@@ -24,6 +25,12 @@ function Post() {
     function handlePrevImage() {
         const nextImage = currentImage > 0 ? currentImage - 1 : currentPost.images.length - 1;
         setCurrentImage(nextImage);
+    }
+
+    function handleSubmitComment(event) {
+        addComment(comment, currentPost.id);
+        setComment('');
+        event.preventDefault();
     }
 
     function handleUnlike() {
@@ -80,6 +87,13 @@ function Post() {
                                 <p>{comment.text}</p>
                             </div>
                         ))}
+                        <form className={css.addComment} onSubmit={handleSubmitComment}>
+                            <input type="text" placeholder="Add a comment…" value={comment} onChange={e => setComment(e.target.value)}/>
+                            {comment ?
+                                <button type="submit">Post</button> :
+                                <button type="submit" disabled>Post</button>
+                            }
+                        </form>
                     </div>
                 </section>
             </div>

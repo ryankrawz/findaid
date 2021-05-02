@@ -60,6 +60,38 @@
     border-radius: 5px;
 }
 
+.addComment {
+    width: 94%;
+    margin-top: 6px;
+    margin-left: 1%;
+    border-bottom: 1px solid #efefef;
+    padding: 10px 0;
+    display: flex;
+}
+
+.addComment input {
+    background: none;
+    border: none;
+    height: 16px;
+    outline: none;
+    font: inherit;
+    padding: 0;
+    width: 100%;
+}
+
+.addComment ::placeholder {
+    color: #999;
+}
+
+.addComment button {
+    cursor: pointer;
+}
+
+.addComment button:disabled {
+    cursor: auto;
+    color: #999;
+}
+
 @media only screen and (min-width: 768px) {
     .postContainer {
         display: flex;
@@ -81,5 +113,9 @@
 
     .commentContainer {
         margin-right: 0;
+    }
+
+    .addComment {
+        width: 98%;
     }
 }

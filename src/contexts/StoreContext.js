@@ -9,6 +9,23 @@ function StoreContextProvider(props) {
 
     const currentUserId = useState('bernie.sanders@gmail.com')[0]; 
 
+    function addComment(comment, postId) {
+
+        let i = 0
+        while (i < store.posts.length) {
+            if (store.posts[i].id === postId) {
+                store.posts[i].comments = store.posts[i].comments.concat({
+                    user: currentUserId,
+                    text: comment,
+                });
+                break;
+            }
+            i++;
+        }
+
+        setStore(store);
+    }
+
     function addPost(photo, description, title, location, resourceName, resourceLink, petitionName, petitionLink, eventName, eventLink) {
         const post = {
           id: uniqueId(""),
@@ -59,7 +76,7 @@ function StoreContextProvider(props) {
     }
 
 	return (
-        <StoreContext.Provider value={{...store, addPost, addLike, removeLike}}>
+        <StoreContext.Provider value={{...store, addComment, addPost, addLike, removeLike}}>
             {props.children}
         </StoreContext.Provider>
     )
