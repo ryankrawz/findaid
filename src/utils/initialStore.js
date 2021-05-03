@@ -48,6 +48,10 @@ const initialStore = {
                 {
                     user: 'bernie.sanders@gmail.com',
                     text: 'This is outrageous! We must rally for change.'
+                },
+                {
+                    user: 'isabelle.smyth@gmail.com',
+                    text: 'I agree. This is not okay. I am planning to attend the town hall meeting.'
                 }
             ]
         },
