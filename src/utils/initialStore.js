@@ -24,6 +24,14 @@ const initialStore = {
             bio: 'I like dunks and a good party.',
             photo: '/assets/magic.jpg',
             isSuperUser: false
+        },
+        {
+            email: 'joysonnn@gmail.com',
+            password: 'ilovedogs',
+            name: 'Joy Son',
+            bio: 'I am a sophomore at BC who wants to stay informed on environmental racism in the US',
+            photo: '/assets/joy.jpg',
+
         }
     ],
     posts: [
@@ -87,6 +95,10 @@ const initialStore = {
                 {
                     user: 'isabelle.smyth@gmail.com',
                     text: 'As a resident of Tennessee, I\'ve been very frustrated with the government\'s slow response.'
+                },
+                {
+                    user: 'joysonnn@gmail.com',
+                    text: 'Will definitely be signing the petition!'
                 }
             ]
         },
@@ -116,7 +128,34 @@ const initialStore = {
                     text: 'This is an outrage.\ We demand additional funding for the zoo'
                 }
             ]
-        }
+        },
+        {
+            id: '357460',
+            poster: 'bernie.sanders@gmail.com',
+            title: 'Sugar Burning Causes Pollution and Respiratory Distress',
+            location: 'Pahokee, FL',
+            description: 'Every October, Florida\'s sugarcane farmers legally burn all but the sugarcanes in their fields before harvest.',
+            images: ['/assets/preharvestburning.jpg', '/assets/smokepollution.jpg'],
+            resourcesInfo: [
+                {
+                    name: 'Black Snow During the Pandemic',
+                    link: '//www.wlrn.org/news/2020-12-28/belle-glades-falling-black-snow-is-an-even-greater-concern-as-the-covid-19-pandemic-continues'
+                }
+            ],
+            fundsPetitions: [],
+            events: [
+                {
+                    name: 'Class Action Lawsuit',
+                    link: '//www.hbsslaw.com/cases/florida-sugar-cane-burning'
+                }
+            ],
+            comments: [
+                {
+                    user: 'joysonnn@gmail.com',
+                    text: 'The health issues resulting from the pollution are too evident. Legal action must be taken.'
+                }
+            ]
+        },
     ],
     likes:[
         {
