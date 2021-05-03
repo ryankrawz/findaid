@@ -16,6 +16,14 @@ const initialStore = {
             bio: 'Looking to help my community BC 21',
             photo: '/assets/isabelle.jpg',
             isSuperUser: false
+        },
+        {
+            email: 'magicjohnson@lakers.com',
+            password: 'dunksonly',
+            name: 'Magic Johnson',
+            bio: 'I like dunks and a good party.',
+            photo: '/assets/magic.jpg',
+            isSuperUser: false
         }
     ],
     posts: [
@@ -79,6 +87,33 @@ const initialStore = {
                 {
                     user: 'isabelle.smyth@gmail.com',
                     text: 'As a resident of Tennessee, I\'ve been very frustrated with the government\'s slow response.'
+                }
+            ]
+        },
+        {
+            id: '902102',
+            poster: 'magic@lakers.com',
+            title: 'Silverback Gorillas escape from the zoo.. again',
+            location: 'Gardena, CA',
+            description: 'The mountain silverback encloser at the Gardena zoo has seen another escape. The gorillas went on to rampge the town and cause havok.',
+            images: ['/assets/escape.jpg', '/assets/monke.jpg', '/assets/gorilla.jpg'],
+            resourcesInfo: [
+                {
+                    name: 'Animal Control',
+                    link: 'https://www.boston.gov/departments/animal-care-and-control'
+                }
+            ],
+            fundsPetitions: [
+                {name: 'Increase funding for the zoo',
+                link: 'https://www.change.org/p/cincinnati-zoo-justice-for-harambe'
+                
+                }
+            ],
+            events: [],
+            comments: [
+                {
+                    user: 'bernie.sanders@gmail.com',
+                    text: 'This is an outrage.\ We demand additional funding for the zoo'
                 }
             ]
         }
